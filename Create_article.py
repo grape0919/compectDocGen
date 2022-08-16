@@ -36,3 +36,6 @@ if __name__=="__main__":
     article = writer.makeArticle()
 
     print(article)
+    
+    with open("포스트.txt", "w", encoding="UTF-8") as wf:
+        wf.write("\r\n".join(article))
