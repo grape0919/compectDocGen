@@ -10,9 +10,7 @@ class PostWriter():
             load_wb = load_workbook(filepath)
             #시트 이름으로 불러오기
             load_ws = load_wb['문단']
-            self.phList = [ [c.value for c in r]  for r in load_ws ]
-            
-
+            self.phList = [ [c.value for c in r if c is not None]  for r in load_ws ]
             self.isLoaded = True
 
     def makeArticle(self):
@@ -20,6 +18,7 @@ class PostWriter():
             result = []
             for phs in self.phList:
                 temp = None
+                print(phs)
                 while(temp==None):
                     temp = random.choice(phs)
 
