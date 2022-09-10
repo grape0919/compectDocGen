@@ -17,6 +17,9 @@ class PostWriter():
         if(self.isLoaded):
             result = []
             for phs in self.phList:
+                checking_list = [p for p in phs if p is not None]
+                if not checking_list:
+                    continue
                 temp = None
                 print(phs)
                 while(temp==None):
